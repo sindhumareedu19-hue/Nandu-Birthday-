@@ -1,182 +1,860 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 <title>Happy Birthday Nandu 💗💛</title>
 
 <style>
-body{
-    margin:0;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    font-family:Georgia,serif;
-    background:linear-gradient(135deg,#fff1b8,#ffe0ec,#e5dcff);
-    color:#594451;
-    overflow:hidden;
+
+/* ---------- BASIC ---------- */
+
+* {
+    box-sizing: border-box;
 }
 
-.card{
-    width:85%;
-    max-width:550px;
-    padding:40px 25px;
-    background:rgba(255,255,255,.78);
-    border-radius:35px;
-    box-shadow:0 15px 50px rgba(120,80,100,.2);
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff1b8,
+            #ffe0ec,
+            #e5dcff
+        );
+
+    color: #594451;
+
+    overflow-x: hidden;
+
 }
 
-h1{
-    font-size:45px;
-    color:#d45b87;
+
+/* ---------- CARD ---------- */
+
+.card {
+
+    width: 90%;
+
+    max-width: 560px;
+
+    padding: 40px 25px;
+
+    background:
+        rgba(255,255,255,0.82);
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 20px 55px
+        rgba(120,80,100,0.20);
+
+    backdrop-filter: blur(12px);
+
+    animation: cardAppear 1.2s ease;
+
 }
 
-h2{
-    font-size:28px;
-    color:#92702a;
+
+/* ---------- TEXT ---------- */
+
+.top {
+
+    color: #b76b88;
+
+    font-size: 15px;
+
+    margin-bottom: 15px;
+
 }
 
-.cake{
-    font-size:75px;
-    animation:bounce 2s infinite;
+
+h1 {
+
+    font-size: 45px;
+
+    color: #d45b87;
+
+    margin: 10px 0;
+
 }
 
-p{
-    font-size:17px;
-    line-height:1.7;
+
+h2 {
+
+    font-size: 28px;
+
+    color: #92702a;
+
+    font-weight: normal;
+
+    margin: 5px 0;
+
 }
 
-button{
-    padding:15px 25px;
-    border:0;
-    border-radius:30px;
-    background:#d96691;
-    color:white;
-    font-size:16px;
+
+p {
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
 }
 
-#letter{
-    display:none;
-    margin-top:25px;
-    padding:20px;
-    background:#fff3c9;
-    border-radius:22px;
+
+/* ---------- CAKE ---------- */
+
+.cake {
+
+    font-size: 78px;
+
+    margin: 25px 0;
+
+    animation:
+        cakeBounce 2s infinite;
+
 }
 
-.emoji{
-    position:fixed;
-    bottom:-50px;
-    font-size:28px;
-    animation:float 8s linear infinite;
+
+/* ---------- BUTTON ---------- */
+
+button {
+
+    margin-top: 15px;
+
+    padding: 15px 28px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #d96691;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-family: Georgia, serif;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px
+        rgba(210,80,130,0.25);
+
+    transition: 0.3s;
+
 }
 
-.e1{left:5%}
-.e2{left:20%;animation-delay:2s}
-.e3{left:35%;animation-delay:1s}
-.e4{left:50%;animation-delay:3s}
-.e5{left:65%;animation-delay:2s}
-.e6{left:80%;animation-delay:4s}
-.e7{left:92%;animation-delay:1s}
 
-@keyframes bounce{
-    50%{transform:translateY(-12px)}
+button:hover {
+
+    transform: scale(1.08);
+
 }
 
-@keyframes float{
-    from{transform:translateY(0);opacity:0}
-    20%{opacity:1}
-    to{transform:translateY(-110vh) rotate(25deg);opacity:0}
+
+button:active {
+
+    transform: scale(0.95);
+
 }
+
+
+/* ---------- SURPRISE LETTER ---------- */
+
+#letter {
+
+    display: none;
+
+    margin-top: 28px;
+
+    padding: 25px;
+
+    background: #fff3c9;
+
+    border-radius: 25px;
+
+    line-height: 1.8;
+
+    box-shadow:
+        0 10px 25px
+        rgba(120,80,50,0.12);
+
+}
+
+
+#letter.show {
+
+    display: block;
+
+    animation:
+        letterAppear 0.8s ease;
+
+}
+
+
+.divider {
+
+    color: #d49a32;
+
+    font-size: 20px;
+
+    margin-bottom: 18px;
+
+}
+
+
+#letter p {
+
+    margin-bottom: 15px;
+
+}
+
+
+h3 {
+
+    color: #d05a83;
+
+    margin-top: 20px;
+
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+
+    margin-top: 28px;
+
+    font-size: 13px;
+
+    color: #9c7888;
+
+}
+
+
+/* ---------- FLOATING EMOJIS ---------- */
+
+.floating {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: -1;
+
+}
+
+
+.emoji {
+
+    position: absolute;
+
+    bottom: -60px;
+
+    font-size: 28px;
+
+    opacity: 0.75;
+
+    animation:
+        floatUp 9s linear infinite;
+
+}
+
+
+.e1 {
+
+    left: 5%;
+
+    animation-duration: 8s;
+
+}
+
+
+.e2 {
+
+    left: 18%;
+
+    animation-duration: 11s;
+
+    animation-delay: 2s;
+
+}
+
+
+.e3 {
+
+    left: 32%;
+
+    animation-duration: 9s;
+
+    animation-delay: 1s;
+
+}
+
+
+.e4 {
+
+    left: 48%;
+
+    animation-duration: 12s;
+
+    animation-delay: 3s;
+
+}
+
+
+.e5 {
+
+    left: 64%;
+
+    animation-duration: 10s;
+
+    animation-delay: 2s;
+
+}
+
+
+.e6 {
+
+    left: 78%;
+
+    animation-duration: 9s;
+
+    animation-delay: 4s;
+
+}
+
+
+.e7 {
+
+    left: 92%;
+
+    animation-duration: 12s;
+
+    animation-delay: 1s;
+
+}
+
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(0.95);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes cakeBounce {
+
+    0%,100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px);
+
+    }
+
+}
+
+
+@keyframes letterAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.95);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes floatUp {
+
+    from {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    20% {
+
+        opacity: 0.8;
+
+    }
+
+    to {
+
+        transform:
+            translateY(-115vh)
+            rotate(25deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 500px) {
+
+    .card {
+
+        padding:
+            35px 20px;
+
+    }
+
+    h1 {
+
+        font-size: 38px;
+
+    }
+
+    h2 {
+
+        font-size: 24px;
+
+    }
+
+    .cake {
+
+        font-size: 68px;
+
+    }
+
+}
+
+
+/* ---------- FALLING EMOJIS AFTER CLICK ---------- */
+
+.falling {
+
+    position: fixed;
+
+    top: -40px;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    font-size: 25px;
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
-<div class="emoji e1">💗</div>
-<div class="emoji e2">💛</div>
-<div class="emoji e3">🌷</div>
-<div class="emoji e4">🦋</div>
-<div class="emoji e5">✨</div>
-<div class="emoji e6">🌸</div>
+
+<!-- FLOATING EMOJIS -->
+
+<div class="floating">
+
+    <div class="emoji e1">💗</div>
+
+    <div class="emoji e2">💛</div>
+
+    <div class="emoji e3">🌷</div>
+
+    <div class="emoji e4">🦋</div>
+
+    <div class="emoji e5">✨</div>
+
+    <div class="emoji e6">🌸</div>
+
+    <div class="emoji e7">💕</div>
+
+</div>
+
+
+
+<!-- MAIN CARD -->
 
 <div class="card">
 
-<p>✨ A little birthday surprise ✨</p>
 
-<h1>Happy Birthday</h1>
+    <div class="top">
 
-<h2>Nandu 💗💛</h2>
+        ✨ A little birthday surprise ✨
 
-<div class="cake">🎂</div>
-
-<p>
-Today is a special day because
-someone really special was born. 🌷
-</p>
-
-<button onclick="openLetter()">
-💌 Open Your Surprise
-</button>
-
-<div id="letter">
+    </div>
 
 
+    <h1>
 
-<p>
-Happy Birthday! 🎂✨
-</p>
+        Happy Birthday
 
-<p>
-I hope your life is always filled with
-happiness, laughter, love and beautiful memories. 💗
-</p>
+    </h1>
 
-<p>
-May all your dreams come true and may
-this new year bring you lots of amazing
-moments. 🌷💛
-</p>
 
-<p>
-Keep smiling, keep shining and always
-stay the amazing person you are! 🦋✨
-</p>
+    <h2>
 
-<h3>
-Happy Birthday once again, Nandu! 🎂💗💛
-</h3>
+        Nandu 💗💛
+
+    </h2>
+
+
+    <div class="cake">
+
+        🎂
+
+    </div>
+
+
+    <p>
+
+        Today is a special day because
+
+        someone really special was born. 🌷
+
+        <br><br>
+
+        So here's a little surprise
+
+        made just for you. 🦋✨
+
+    </p>
+
+
+    <!-- BUTTON -->
+
+    <button
+        id="surpriseButton"
+        onclick="openSurprise()"
+    >
+
+        💌 Open Your Surprise
+
+    </button>
+
+
+
+    <!-- SECRET LETTER -->
+
+    <div id="letter">
+
+
+        <div class="divider">
+
+            💗 ─── 🌷 ─── 💛
+
+        </div>
+
+
+        <p>
+
+            Dear Nandu, 💕
+
+        </p>
+
+
+        <p>
+
+            Happy Birthday! 🎂✨
+
+        </p>
+
+
+        <p>
+
+            I hope your life is always filled
+
+            with happiness, laughter, love
+
+            and beautiful memories. 💗
+
+        </p>
+
+
+        <p>
+
+            May all your dreams come true
+
+            and may this new year bring you
+
+            lots of amazing moments. 🌷💛
+
+        </p>
+
+
+        <p>
+
+            Keep smiling, keep shining and
+
+            always stay the amazing person
+
+            you are! 🦋✨
+
+        </p>
+
+
+        <h3>
+
+            Happy Birthday once again,
+
+            Nandu! 🎂💗💛
+
+        </h3>
+
+
+        <div class="divider">
+
+            🫶🏻 ✨ 🌸 🤍 ✨ 🫶🏻
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer">
+
+        Made with lots of love ♡
+
+    </div>
+
 
 </div>
 
-<p>Made with lots of love ♡</p>
 
-</div>
+
+<!-- JAVASCRIPT -->
 
 <script>
-function openLetter(){
 
-document.getElementById("letter").style.display="block";
+function openSurprise() {
 
-let emojis=["💗","💛","🌷","🦋","✨","🌸","🫶🏻","🤍"];
 
-for(let i=0;i<25;i++){
+    /* Get letter */
 
-let e=document.createElement("div");
+    var letter =
+        document.getElementById("letter");
 
-e.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
 
-e.style.position="fixed";
-e.style.left=Math.random()*100+"vw";
-e.style.top="-30px";
-e.style.fontSize="25px";
-e.style.zIndex="999";
+    /* Show letter */
 
-document.body.appendChild(e);
+    letter.classList.add("show");
 
-let a=e.animate(
-[
-{transform:"translateY(0)",opacity:1},
-{transform:"translateY(110vh) rotate(360deg)",opacity:0}
-],
-{duration:3000+Math.random()*
+
+    /* Change button text */
+
+    var button =
+        document.getElementById("surpriseButton");
+
+
+    button.innerHTML =
+        "💗 Surprise Opened! 💗";
+
+
+    /* Disable button */
+
+    button.disabled = true;
+
+
+    button.style.opacity = "0.8";
+
+
+    /* Emoji list */
+
+    var emojis = [
+
+        "💗",
+
+        "💛",
+
+        "🌷",
+
+        "🦋",
+
+        "✨",
+
+        "🌸",
+
+        "💕",
+
+        "🫶🏻",
+
+        "🤍",
+
+        "🌼",
+
+        "⭐"
+
+    ];
+
+
+    /* Create falling emojis */
+
+    for (
+        var i = 0;
+        i < 35;
+        i++
+    ) {
+
+
+        var emoji =
+            document.createElement("div");
+
+
+        emoji.className =
+            "falling";
+
+
+        emoji.innerHTML =
+            emojis[
+                Math.floor(
+                    Math.random()
+                    * emojis.length
+                )
+            ];
+
+
+        emoji.style.left =
+            Math.random() * 100 + "vw";
+
+
+        emoji.style.fontSize =
+            (18 +
+            Math.random() * 18)
+            + "px";
+
+
+        document.body.appendChild(
+            emoji
+        );
+
+
+        /* Animate */
+
+        var animation =
+            emoji.animate(
+
+                [
+
+                    {
+                        transform:
+                            "translateY(0) rotate(0deg)",
+
+                        opacity: 1
+                    },
+
+                    {
+
+                        transform:
+                            "translateY(110vh) rotate(360deg)",
+
+                        opacity: 0
+                    }
+
+                ],
+
+                {
+
+                    duration:
+                        2500 +
+                        Math.random() * 3000,
+
+                    easing:
+                        "linear"
+
+                }
+
+            );
+
+
+        /* Remove after animation */
+
+        animation.onfinish =
+            function() {
+
+                this.effect
+                    .target
+                    .remove();
+
+            };
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
